@@ -2,7 +2,15 @@
 
 import React from 'react';
 
-import { css } from '@emotion/react';
+import { Global, css } from '@emotion/react';
+
+const globalStyles = css`
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+  }
+`;
 
 function ArticleText(props) {
   const styles = css`
@@ -88,6 +96,7 @@ const objectStyles = {
 function App() {
   return (
     <div>
+      <Global styles={globalStyles} />
       <h1 css={styles}>What a boring app...</h1>
       <p><Button>Button 1</Button></p>
       <p><Button secondary>Button 2</Button></p>
